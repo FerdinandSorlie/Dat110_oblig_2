@@ -54,7 +54,8 @@ public class Storage {
 	}
 
 	public void createTopic(String topic) {
-		subscriptions.put(topic, new HashSet<String>());
+		if(subscriptions.get(topic) == null)
+			subscriptions.put(topic, new HashSet<String>());
 	}
 
 	public void deleteTopic(String topic) {
